@@ -54,8 +54,6 @@ namespace Text2Speech
             //        sw.WriteLine("Hello World!");
             //}
 
-
-
             using (SpeechSynthesizer synth = new SpeechSynthesizer())
             {
                 synth.SetOutputToWaveFile(@"G:\Speech\SpeechTo22.mp3");
