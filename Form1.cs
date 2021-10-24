@@ -22,14 +22,14 @@ namespace Text2Speech
         private void Form1_Load(object sender, EventArgs e)
         {
             speechSynthesizerObj = new SpeechSynthesizer();
-
         }
 
         private void btnSpeak_Click(object sender, EventArgs e)
         {
+            var voice = speechSynthesizerObj.GetInstalledVoices();
             speechSynthesizerObj.Dispose();
             if (richTextBox1.Text != "")
-            {
+            {               
                 speechSynthesizerObj = new SpeechSynthesizer();
                 speechSynthesizerObj.SpeakAsync(richTextBox1.Text);
             }
@@ -42,20 +42,13 @@ namespace Text2Speech
                 return;
             }
 
-            SaveFileDialog savefile = new SaveFileDialog();
-            // set a default file name
-            savefile.FileName = "unknown.mp3";
-            // set filters - this can be done in properties as well
+            SaveFileDialog savefile = new SaveFileDialog();          
+            savefile.FileName = "unknown.mp3";           
             savefile.Filter = "Mp3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
-
             if (savefile.ShowDialog() == DialogResult.OK)
-            {
-                //using (StreamWriter sw = new StreamWriter(savefile.FileName))
-                  //  sw.WriteLine("Hello World!");
-
-
+            {             
                 using (SpeechSynthesizer synth = new SpeechSynthesizer())
-                {
+                {                   
                     synth.SetOutputToWaveFile(savefile.FileName);
                     PromptBuilder builder = new PromptBuilder();
                     builder.AppendText(richTextBox1.Text);
@@ -64,18 +57,6 @@ namespace Text2Speech
                     MessageBox.Show("Saved Succesfully");
                 }
             }
-
-            //using (SpeechSynthesizer synth = new SpeechSynthesizer())
-            //{
-            //    synth.SetOutputToWaveFile(@"G:\Speech\SpeechTo22.mp3");
-            //    PromptBuilder builder = new PromptBuilder();
-            //    builder.AppendText(richTextBox1.Text);
-            //    synth.Speak(builder);
-
-
-            //}
-
-
         }
     }
 }
