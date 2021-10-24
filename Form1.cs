@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Speech.Synthesis;
 using System.Text;
@@ -40,6 +41,18 @@ namespace Text2Speech
             {
                 return;
             }
+
+            //SaveFileDialog savefile = new SaveFileDialog();
+            //// set a default file name
+            //savefile.FileName = "unknown.txt";
+            //// set filters - this can be done in properties as well
+            //savefile.Filter = "Mp3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
+
+            //if (savefile.ShowDialog() == DialogResult.OK)
+            //{
+            //    using (StreamWriter sw = new StreamWriter(savefile.FileName))
+            //        sw.WriteLine("Hello World!");
+            //}
 
             using (SpeechSynthesizer synth = new SpeechSynthesizer())
             {

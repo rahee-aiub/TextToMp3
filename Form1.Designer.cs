@@ -36,20 +36,20 @@ namespace Text2Speech
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 29);
+            this.richTextBox1.Location = new System.Drawing.Point(25, 29);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(592, 263);
+            this.richTextBox1.Size = new System.Drawing.Size(572, 263);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
             // btnSpeak
             // 
-            this.btnSpeak.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnSpeak.BackColor = System.Drawing.Color.Green;
             this.btnSpeak.FlatAppearance.BorderSize = 0;
             this.btnSpeak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSpeak.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSpeak.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSpeak.Location = new System.Drawing.Point(146, 326);
+            this.btnSpeak.Location = new System.Drawing.Point(124, 314);
             this.btnSpeak.Name = "btnSpeak";
             this.btnSpeak.Size = new System.Drawing.Size(148, 46);
             this.btnSpeak.TabIndex = 1;
@@ -59,12 +59,12 @@ namespace Text2Speech
             // 
             // btnDownload
             // 
-            this.btnDownload.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnDownload.BackColor = System.Drawing.Color.Indigo;
             this.btnDownload.FlatAppearance.BorderSize = 0;
             this.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDownload.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDownload.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDownload.Location = new System.Drawing.Point(358, 326);
+            this.btnDownload.Location = new System.Drawing.Point(337, 314);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.Size = new System.Drawing.Size(148, 46);
             this.btnDownload.TabIndex = 2;
@@ -76,10 +76,12 @@ namespace Text2Speech
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 450);
+            this.ClientSize = new System.Drawing.Size(623, 397);
             this.Controls.Add(this.btnDownload);
             this.Controls.Add(this.btnSpeak);
             this.Controls.Add(this.richTextBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Text to Speech";
