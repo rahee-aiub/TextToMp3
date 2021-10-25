@@ -32,6 +32,7 @@ namespace Text2Speech
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnSpeak = new System.Windows.Forms.Button();
             this.btnDownload = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -50,7 +51,7 @@ namespace Text2Speech
             this.btnSpeak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSpeak.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSpeak.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSpeak.Location = new System.Drawing.Point(124, 314);
+            this.btnSpeak.Location = new System.Drawing.Point(25, 314);
             this.btnSpeak.Name = "btnSpeak";
             this.btnSpeak.Size = new System.Drawing.Size(148, 46);
             this.btnSpeak.TabIndex = 1;
@@ -65,7 +66,7 @@ namespace Text2Speech
             this.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDownload.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDownload.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDownload.Location = new System.Drawing.Point(337, 314);
+            this.btnDownload.Location = new System.Drawing.Point(237, 314);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.Size = new System.Drawing.Size(148, 46);
             this.btnDownload.TabIndex = 2;
@@ -73,11 +74,27 @@ namespace Text2Speech
             this.btnDownload.UseVisualStyleBackColor = false;
             this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.Crimson;
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnClear.Location = new System.Drawing.Point(449, 314);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(148, 46);
+            this.btnClear.TabIndex = 3;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(623, 397);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDownload);
             this.Controls.Add(this.btnSpeak);
             this.Controls.Add(this.richTextBox1);
@@ -96,6 +113,7 @@ namespace Text2Speech
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button btnSpeak;
         private System.Windows.Forms.Button btnDownload;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 
