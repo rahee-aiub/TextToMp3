@@ -22,16 +22,25 @@ namespace Text2Speech
         private void Form1_Load(object sender, EventArgs e)
         {
             speechSynthesizerObj = new SpeechSynthesizer();
+            btnSpeak.Enabled = true;
+            btnResume.Enabled = false;
+            btnPause.Enabled = false;
+            btnStop.Enabled = false;
         }
 
         private void btnSpeak_Click(object sender, EventArgs e)
         {
-            var voice = speechSynthesizerObj.GetInstalledVoices();
+           
             speechSynthesizerObj.Dispose();
             if (richTextBox1.Text != "")
             {               
                 speechSynthesizerObj = new SpeechSynthesizer();
                 speechSynthesizerObj.SpeakAsync(richTextBox1.Text);
+
+              
+                btnResume.Enabled = true;
+                btnPause.Enabled = true;
+                btnStop.Enabled = true;
             }
         }
 
@@ -62,6 +71,49 @@ namespace Text2Speech
         private void btnClear_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = "";
+            btnSpeak.Enabled = true;
+            btnResume.Enabled = false;
+            btnPause.Enabled = false;
+            btnStop.Enabled = false;
+        }
+
+        private void btnPause_Click(object sender, EventArgs e)
+        {
+            if (speechSynthesizerObj != null)
+            {
+               
+                if (speechSynthesizerObj.State == SynthesizerState.Speaking)
+                {                      
+                    speechSynthesizerObj.Pause();
+                    btnResume.Enabled = true;
+                    btnSpeak.Enabled = false;
+                }
+            }
+        }
+
+        private void btnResume_Click(object sender, EventArgs e)
+        {
+            if (speechSynthesizerObj != null)
+            {
+                if (speechSynthesizerObj.State == SynthesizerState.Paused)
+                {
+                    speechSynthesizerObj.Resume();
+                    btnResume.Enabled = false;
+                    btnSpeak.Enabled = true;
+                }
+            }
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            if (speechSynthesizerObj != null)
+            {
+                speechSynthesizerObj.Dispose();
+                btnSpeak.Enabled = true;
+                btnResume.Enabled = false;
+                btnPause.Enabled = false;
+                btnStop.Enabled = false;
+            }
         }
     }
 }
